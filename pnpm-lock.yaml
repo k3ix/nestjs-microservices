@@ -77,6 +77,9 @@ dependencies:
   rxjs:
     specifier: ^7.8.1
     version: 7.8.1
+  stripe:
+    specifier: ^17.1.0
+    version: 17.1.0
 
 devDependencies:
   '@nestjs/cli':
@@ -109,6 +112,9 @@ devDependencies:
   '@types/passport-local':
     specifier: ^1.0.38
     version: 1.0.38
+  '@types/stripe':
+    specifier: ^8.0.417
+    version: 8.0.417
   '@types/supertest':
     specifier: ^2.0.12
     version: 2.0.16
@@ -1472,6 +1478,13 @@ packages:
 
   /@types/stack-utils@2.0.3:
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
+    dev: true
+
+  /@types/stripe@8.0.417:
+    resolution: {integrity: sha512-PTuqskh9YKNENnOHGVJBm4sM0zE8B1jZw1JIskuGAPkMB+OH236QeN8scclhYGPA4nG6zTtPXgwpXdp+HPDTVw==}
+    deprecated: This is a stub types definition. stripe provides its own type definitions, so you do not need this installed.
+    dependencies:
+      stripe: 17.1.0
     dev: true
 
   /@types/superagent@8.1.9:
@@ -5243,6 +5256,13 @@ packages:
   /strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  /stripe@17.1.0:
+    resolution: {integrity: sha512-sNRsJx7LPP2Gg6cBJoHJqhr+UoBVZZRes2BDqbrg+1FDBxJc4Yn+LkrpJ/VnL3XQ3+6I5GrOUnSSFfE/joDFjw==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 20.16.5
+      qs: 6.13.0
 
   /superagent@8.1.2:
     resolution: {integrity: sha512-6WTxW1EB6yCxV5VFOIPQruWGHqc3yI7hEmZK6h+pyk69Lk/Ut7rLUY6W/ONF2MjBuGjvmMiIpsrVJ2vjrHlslA==}
