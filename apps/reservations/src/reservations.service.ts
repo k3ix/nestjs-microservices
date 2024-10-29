@@ -15,18 +15,20 @@ export class ReservationsService {
 
   async create(
     { charge, ...reservationData }: CreateReservationDto,
-    {email, _id: userId}: UserDto,
+    { email, _id: userId }: UserDto,
   ) {
-    return this.paymentsService.send('create_charge', { ...charge, email }).pipe(
-      map(async (res) => {
-        return await this.reservationsRepository.create({
-          ...reservationData,
-          invoiceId: res.id,
-          timestamp: new Date(),
-          userId,
-        });
-      }),
-    );
+    return this.paymentsService
+      .send('create_charge', { ...charge, email })
+      .pipe(
+        map(async (res) => {
+          return await this.reservationsRepository.create({
+            ...reservationData,
+            invoiceId: res.id,
+            timestamp: new Date(),
+            userId,
+          });
+        }),
+      );
   }
 
   async findAll() {
