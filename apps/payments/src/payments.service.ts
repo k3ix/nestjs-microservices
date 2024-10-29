@@ -31,7 +31,10 @@ export class PaymentsService {
         allow_redirects: 'never',
       },
     });
-    this.notificationService.emit('notify_email', {email})
+    this.notificationService.emit('notify_email', {
+      email,
+      text: `Your payment of $${amount} has completed successfully.`,
+    });
     return paymentIntents;
   }
 }
